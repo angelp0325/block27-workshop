@@ -18,7 +18,6 @@ export function useGuests() {
         setLoading(false);
       }
     }
-
     fetchGuests();
   }, []);
 

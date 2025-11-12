@@ -13,22 +13,16 @@ export default function App() {
     error: guestError,
   } = useGuestDetails(selectedGuestId);
 
-  const placeholderGuests = [
-    { id: 1, name: "Penny Nickel", email: "penny@quarter.com" },
-    { id: 2, name: "Tom Copper", email: "tom@metals.org" },
-  ];
-
   if (guestsLoading) return <p>Loading guests...</p>;
   if (guestsError) return <p>Error: {guestsError}</p>;
 
   return (
     <div style={{ margin: "2rem", fontFamily: "sans-serif" }}>
-      <h1>Convention Center Guests</h1>
-
       {!selectedGuestId ? (
         <GuestList
-          guests={guests.length ? guests : placeholderGuests}
+          guests={guests}
           onSelect={setSelectedGuestId}
+          selectedGuestId={selectedGuestId}
         />
       ) : guestLoading ? (
         <p>Loading guest details...</p>

@@ -1,19 +1,32 @@
 import "./guestlist.css";
-export default function GuestList({ guests, onSelect }) {
+
+export default function GuestList({ guests, onSelect, selectedGuestId }) {
   return (
-    <div>
+    <div className="guest-list-container">
       <h2>Guest List</h2>
-      <ul>
-        {guests.map((guest) => (
-          <li
-            key={guest.id}
-            style={{ cursor: "pointer", margin: "10px 0" }}
-            onClick={() => onSelect(guest.id)}
-          >
-            <strong>{guest.name}</strong> — {guest.email}
-          </li>
-        ))}
-      </ul>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+          </tr>
+        </thead>
+        <tbody>
+          {guests.map((guest) => (
+            <tr
+              key={guest.id}
+              className={guest.id === selectedGuestId ? "selected" : ""}
+              onClick={() => onSelect(guest.id)}
+            >
+              <td>{guest.name}</td>
+              <td>{guest.email}</td>
+              <td>{guest.phone || "N/A"}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p className="note">Select a guest to view more details.</p>
     </div>
   );
 }

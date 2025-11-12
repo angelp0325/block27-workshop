@@ -65,3 +65,17 @@ tbody tr:hover {
   font-size: 0.9rem;
   color: #333;
 }
+
+button {
+  margin-top: 20px;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  background-color: #ddd;
+  border: 1px solid #999;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ccc;
+}

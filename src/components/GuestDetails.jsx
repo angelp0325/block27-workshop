@@ -2,7 +2,7 @@ export default function GuestDetails({ guest, onBack }) {
   if (!guest) return null;
 
   return (
-    <div>
+    <div className="guest-list-container">
       <h2>{guest.name}</h2>
       <p>
         <strong>Email:</strong> {guest.email}
@@ -17,7 +17,7 @@ export default function GuestDetails({ guest, onBack }) {
         <strong>Bio:</strong> {guest.bio}
       </p>
 
-      <button onClick={onBack}>Back</button>
+      <button onClick={onBack}>← Back to List</button>
     </div>
   );
 }

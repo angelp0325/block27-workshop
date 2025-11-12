@@ -8,7 +8,6 @@ export function useGuestDetails(id) {
 
   useEffect(() => {
     if (!id) return;
-
     async function fetchGuest() {
       try {
         setLoading(true);
@@ -20,7 +19,6 @@ export function useGuestDetails(id) {
         setLoading(false);
       }
     }
-
     fetchGuest();
   }, [id]);
 
